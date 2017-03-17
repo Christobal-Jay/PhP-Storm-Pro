@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ea55d169-29b0-4151-b911-d431ffd1c9a7" name="atec" url="http://www.atec-personal.de">
+        <fileTransfer host="www.atec-personal.de" port="21" rootFolder="/relaunch2016">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

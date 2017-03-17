@@ -1,0 +1,87 @@
+{namespace b=OliverThiele\OtBootstrap3\ViewHelpers}
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://xsd.oliver-thiele.de/ns/typo3/cms-fluid/7.6/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<f:link.page pageUid="{settings.homepageUid}" class="navbar-brand">
+				{settings.companyName}
+				</f:link.page>
+
+
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+
+				<f:cObject typoscriptObjectPath="lib.navigation" />
+
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<f:if condition="{data.uid} != 1">
+			<f:then>
+		<f:cObject typoscriptObjectPath="lib.breadcrumb" />
+			</f:then>
+			<f:else>
+
+			</f:else>
+
+		</f:if>
+	<f:render section="Content" />
+	</div>
+	<f:comment>
+		<![CDATA[
+	footer.pagefooter>.row>.col-sm-3*4{{content$ -> f:format.raw()}}
+		]]>
+	</f:comment>
+
+	<footer id="pagefooter">
+		<div class="container">
+		<div class="row">
+		<div class="col-sm-3">{content6 -> f:format.raw()}</div>
+		<div class="col-sm-3">{content7 -> f:format.raw()}</div>
+		<div class="col-sm-3">{content8 -> f:format.raw()}</div>
+		<div class="col-sm-3">{content9 -> f:format.raw()}</div>
+			<div class="col-xs-12"><p>
+
+				<f:translate id="page_created" default="Diese Seite wurde am %1s um %2s Uhr erstellt."
+							 extensionName="ot_bootstrap3"
+							 arguments="{
+0: '
+    {f:format.date(
+        format: \'{f:translate(id: \\\'formatDate\\\', default: \\\'d.m.Y\\\', extensionName: \\\'ot_bootstrap3\\\')}\',
+        date: \'{data.crdate}\'
+    )}
+    ',
+1: '
+    {f:format.date(
+        format: \'{f:translate(id: \\\'formatTime\\\', default: \\\'H:i\\\', extensionName: \\\'ot_bootstrap3\\\')}\',
+        date: \'{data.crdate}\'
+    )}
+    '
+
+    }"
+				/>
+
+			</p></div>
+		</div>
+		</div>
+	</footer>
+
+</f:spaceless>
+</html>
+
+

@@ -1,0 +1,215 @@
+page = PAGE
+page {
+	meta {
+		description.data = TSFE:page|description
+		viewport = width=device-width, initial-scale=1
+	}
+
+	includeCSSLibs {
+		bootstrap = https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+		bootstrap {
+			forceOnTop = 1
+			external = 1
+			disableCompression = 1
+			excludeFromConcatenation = 1
+		}
+
+	}
+	includeCSS {
+		myStyles = typo3conf/ext/ot_bootstrap3/Resources/Public/CSS/MyStyles.css
+	}
+
+	headerData {
+		10 = TEXT
+		10.value (
+			<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+			<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			<![endif]-->
+		)
+	}
+
+	bodyTagCObject = COA
+	bodyTagCObject {
+		10 = TEXT
+		10 {
+			value = <body id="page-{TSFE:id}" class="
+			stdWrap.insertData = 1
+		}
+
+		20 < lib.templateName
+		20.stdWrap {
+			case = lower
+			wrap = be-layout-|
+		}
+
+		#               30 = CASE
+		#               30 {
+		#                       key.data = TSFE:page|layout
+		#
+		#                       # @fixme white and black are only examples!
+		#                       # @see EXT:ot_bootstrap3/Configuration/PageTS/PageTSconfigFile.t3s
+		#                       0 = TEXT
+		#                       0.value = white
+		#
+		#                       1 = TEXT
+		#                       1.value = black
+		#
+		#                       default < .0
+		#                       stdWrap.noTrimWrap = | layout-||
+		#               }
+
+		40 = CASE
+		40 {
+			key.data = TSFE:sys_language_uid
+			stdWrap {
+				required = 1
+				noTrimWrap = | language-||
+			}
+
+			1 = TEXT
+			1.value = de
+
+			default = TEXT
+			default.value = en
+		}
+
+		50 = TEXT
+		50.stdWrap {
+			data = GP:type
+			required = 1
+			noTrimWrap = | type-||
+		}
+
+		100 = TEXT
+		100.value = ">
+	}
+	bodyTagCObject = COA
+	bodyTagCObject {
+		10 = TEXT
+		10 {
+			value = <body id="page-{TSFE:id}" class="
+			stdWrap.insertData = 1
+		}
+
+		20 < lib.templateName
+		20.stdWrap {
+			case = lower
+			wrap = be-layout-|
+		}
+
+		#               30 = CASE
+		#               30 {
+		#                       key.data = TSFE:page|layout
+		#
+		#                       # @fixme white and black are only examples!
+		#                       # @see EXT:ot_bootstrap3/Configuration/PageTS/PageTSconfigFile.t3s
+		#                       0 = TEXT
+		#                       0.value = white
+		#
+		#                       1 = TEXT
+		#                       1.value = black
+		#
+		#                       default < .0
+		#                       stdWrap.noTrimWrap = | layout-||
+		#               }
+
+		40 = CASE
+		40 {
+			key.data = TSFE:sys_language_uid
+			stdWrap {
+				required = 1
+				noTrimWrap = | language-||
+			}
+
+			1 = TEXT
+			1.value = de
+
+			default = TEXT
+			default.value = en
+		}
+
+		50 = TEXT
+		50.stdWrap {
+			data = GP:type
+			required = 1
+			noTrimWrap = | type-||
+		}
+
+		100 = TEXT
+		100.value = ">
+	}
+
+
+	10 = FLUIDTEMPLATE
+	10 {
+		templateName < lib.templateName
+		templateRootPaths {
+			10 = typo3conf/ext/ot_bootstrap3/Resources/Private/Templates
+		}
+		layoutRootPaths {
+			10 = typo3conf/ext/ot_bootstrap3/Resources/Private/Layouts
+		}
+		partialRootPaths {
+			10 = typo3conf/ext/ot_bootstrap3/Resources/Private/Partials
+		}
+		settings {
+			homepageUid = 1
+			companyName = Meier und Söhne GmbH
+		}
+		variables {
+			content0 < styles.content.get
+
+			content0 = CONTENT
+			content0 {
+				table = tt_content
+				select {
+					where = colPos=0
+					orderBy = sorting
+				}
+			}
+
+
+			content1 < .content0
+			content1.select.where = colPos=1
+			content2 < .content0
+			content2.select.where = colPos=2
+			content3 < .content0
+			content3.select.where = colPos=3
+			content4 < .content0
+			content4.select.where = colPos=4
+			content5 < .content0
+			content5.select.where = colPos=5
+
+			# FOOTER
+
+			content6 < .content0
+			content6.select.where = colPos=6
+			content6.select.pidInList = 1
+			content7 < .content6
+			content7.select.where = colPos=7
+			content8 < .content6
+			content8.select.where = colPos=8
+			content9 < .content6
+			content9.select.where = colPos=9
+
+		}
+	}
+
+
+
+	3000 = TEXT
+	3000.value (
+<script
+  src="http://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	)
+	includeJSFooter {
+		myScripts = typo3conf/ext/ot_bootstrap3/Resources/Public/Js/MyStyles.js
+	}
+}

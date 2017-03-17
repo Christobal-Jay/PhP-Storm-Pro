@@ -1,0 +1,14 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/ot_bootstrap3/Configuration/TypoScript/Config.t3s">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/ot_bootstrap3/Configuration/TypoScript/Lib" extensions="t3s">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/ot_bootstrap3/Configuration/TypoScript/Plugin.t3s">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/ot_bootstrap3/Configuration/TypoScript/Page.t3s">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/ot_bootstrap3/Configuration/TypoScript/setup.txt">
+
+<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/ot_bootstrap3/Configuration/TypoScript/constants.txt">
+
+#<INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/ot_bootstrap3/Configuration/TypoScript/LanguageEnUs.t3s">
+

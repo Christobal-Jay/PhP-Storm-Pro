@@ -1,0 +1,12 @@
+lib.fluidContent {
+	templateRootPaths {
+		20 = typo3conf/ext/ot_bootstrap3/Resources/Private/Templates/Content
+	}
+	partialRootPaths {
+		20 = typo3conf/ext/ot_bootstrap3/Resources/Private/Partials/Content
+	}
+	layoutRootPaths {
+		20 = typo3conf/ext/ot_bootstrap3/Resources/Private/Layouts/Content
+	}
+
+}

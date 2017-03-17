@@ -1,0 +1,104 @@
+mod.web_layout.BackendLayouts {
+	Default {
+		title = Default template
+		config {
+
+			backend_layout {
+				colCount = 1
+				rowCount = 2
+				rows {
+					1 {
+						columns {
+							1 {
+								name = Inhalt
+								colPos = 0
+							}
+						}
+					}
+					2 {
+						columns {
+							1 {
+								name = Ablage
+								colPos = 1
+							}
+						}
+					}
+				}
+			}
+
+		}
+			icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+
+	}
+
+	Homepage {
+		title = Homepage
+		config {
+
+			backend_layout {
+				colCount = 4
+				rowCount = 3
+				rows {
+					1 {
+						columns {
+							1 {
+								name = Inhalt
+								colPos = 0
+								colspan = 4
+							}
+						}
+					}
+					2 {
+						columns {
+							1 {
+								name = Footer 6
+								colPos = 6
+							}
+							2 {
+								name = Footer 2
+								colPos = 7
+							}
+							3 {
+								name = Footer 3
+								colPos = 8
+							}
+							4 {
+								name = Footer 4
+								colPos = 9
+							}
+						}
+						3 {
+							columns {
+								1 {
+									name = Ablage
+									colPos = 1234
+									colspan = 4
+								}
+							}
+					}
+				}
+			}
+
+		}
+		icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+
+	}
+
+		}
+
+	TCEFORM {
+	pages {
+		backend_layout {
+			removeItems = -1
+		}
+		backend_layout_next_level {
+			removeItems = -1
+		}
+		layout.disabled = 1
+		alias.disabled = 1
+		php_tree_stop.disabled = 1
+		url_scheme_.disabled = 1
+		newUntil.disabled = 1
+	}
+	}
+}

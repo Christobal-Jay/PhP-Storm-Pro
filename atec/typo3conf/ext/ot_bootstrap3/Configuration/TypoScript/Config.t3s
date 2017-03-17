@@ -1,0 +1,20 @@
+config {
+	#locallang.xlf
+	language = en
+	# PHP
+	locale_all = en_GB.utf-8
+	# DB
+	sys_language_uid = 0
+	sys_language_mode = strict
+
+	linkVars = L(1-3)
+
+	sendCasheHeaders = 1
+	cache_period = 86400
+
+	compressCss = 1
+	compressJs = 1
+	concatenateCss = 1
+	concatenateJs = 1
+
+}
